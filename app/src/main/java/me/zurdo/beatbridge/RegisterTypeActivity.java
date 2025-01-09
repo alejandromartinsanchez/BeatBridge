@@ -2,7 +2,6 @@ package me.zurdo.beatbridge;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.ImageView;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -18,7 +17,7 @@ public class RegisterTypeActivity extends AppCompatActivity {
         // Obtiene referencias a las imágenes que representan las opciones de tipo de usuario
         imageViewListener = findViewById(R.id.imageViewListener);
         imageViewArtist = findViewById(R.id.imageViewArtist);
-        backArrow = findViewById(R.id.backArrow);
+        backArrow = findViewById(R.id.back);
 
         // Configura el evento de clic para el ImageView del oyente
         imageViewListener.setOnClickListener(v -> navigateToDetails("Listener"));

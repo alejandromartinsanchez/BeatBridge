@@ -20,7 +20,7 @@
 
         <!-- Actividad principal -->
         <activity
-            android:name=".MainActivity"
+            android:name=".LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -34,6 +34,26 @@
 
         <!-- Actividad para completar los detalles del registro -->
         <activity android:name=".RegisterDetailsActivity" />
+
+        <!-- Actividad para el inicio de sesión -->
+        <activity android:name=".HomeActivity" />
+
+        <!-- Actividad para la lista de canciones -->
+        <activity android:name=".SongActivity" />
+
+        <!-- Actividad para el perfil -->
+        <activity android:name=".ProfileActivity" />
+
+        <!-- Actividad para las estadísticas -->
+        <activity android:name=".StatsActivity" />
+
+        <!-- Actividad para  contenido -->
+        <activity android:name=".ContentActivity" />
+        <activity android:name=".AddContentActivity" />
+        <activity android:name=".UpdateContentActivity" />
+        <activity android:name=".DeleteContentActivity" />
+
+
 
     </application>
 

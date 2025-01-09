@@ -1,6 +1,7 @@
 package me.zurdo.beatbridge.auth;
 
-import me.zurdo.beatbridge.MainActivity;
+import me.zurdo.beatbridge.LoginActivity;
+import me.zurdo.beatbridge.Main;
 import okhttp3.Cookie;
 
 public class AuthUtils {
@@ -16,7 +17,7 @@ public class AuthUtils {
     }
 
     public static String getAuthCookie() {
-        Cookie authCookie = MainActivity.cookies.getCookieByName("auth");
+        Cookie authCookie = Main.cookies.getCookieByName("auth");
         return authCookie != null ? authCookie.value() : null;
     }
 }

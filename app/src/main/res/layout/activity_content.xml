@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF3E0"
+    android:padding="16dp">
+
+    <!-- Flecha de retroceso en la esquina superior izquierda -->
+    <ImageView
+        android:id="@+id/back"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/logovolver"
+        android:contentDescription="Volver"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp" />
+
+
+    <!-- Texto principal -->
+    <TextView
+        android:id="@+id/textViewTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:text="Contenido"
+        android:textColor="#000"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/back" />
+
+    <!-- Imagen de Add Content -->
+    <ImageView
+        android:id="@+id/imageViewAdd"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/logoadd"
+        android:contentDescription="Add Content"
+        android:scaleType="centerCrop"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imageViewDelete"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="16dp" />
+
+    <!-- Texto de Add Content -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Añadir canción"
+        android:textSize="18sp"
+        android:textColor="#000"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewAdd"
+        app:layout_constraintStart_toStartOf="@+id/imageViewAdd"
+        app:layout_constraintEnd_toEndOf="@+id/imageViewAdd"
+        android:layout_marginTop="8dp" />
+
+    <!-- Imagen de Delete Content -->
+    <ImageView
+        android:id="@+id/imageViewDelete"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/logodelete"
+        android:contentDescription="Delete Content"
+        android:scaleType="centerCrop"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTitle"
+        app:layout_constraintStart_toEndOf="@+id/imageViewAdd"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp" />
+
+    <!-- Texto de Delete Content -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Eliminar canción"
+        android:textSize="18sp"
+        android:textColor="#000"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewDelete"
+        app:layout_constraintStart_toStartOf="@+id/imageViewDelete"
+        app:layout_constraintEnd_toEndOf="@+id/imageViewDelete"
+        android:layout_marginTop="8dp" />
+
+    <!-- Imagen de Update Content -->
+    <ImageView
+        android:id="@+id/imageViewUpdate"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/logoupdate"
+        android:contentDescription="Update Content"
+        android:scaleType="centerCrop"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewAdd"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="48dp" />
+
+    <!-- Texto de Update Content -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Actualizar canción"
+        android:textSize="18sp"
+        android:textColor="#000"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewUpdate"
+        app:layout_constraintStart_toStartOf="@+id/imageViewUpdate"
+        app:layout_constraintEnd_toEndOf="@+id/imageViewUpdate"
+        android:layout_marginTop="8dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

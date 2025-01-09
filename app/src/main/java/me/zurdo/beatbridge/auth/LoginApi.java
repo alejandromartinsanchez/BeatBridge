@@ -5,7 +5,7 @@ import com.google.gson.Gson;
 import java.io.IOException;
 import java.util.List;
 
-import me.zurdo.beatbridge.MainActivity;
+import me.zurdo.beatbridge.Main;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.Cookie;
@@ -16,10 +16,10 @@ import okhttp3.RequestBody;
 import okhttp3.Response;
 
 public class LoginApi {
-    private static final String LOGIN_API_URL = "http://localhost:7070/api/login";
+    private static final String LOGIN_API_URL = "http://10.0.2.2:7070/api/login";
     private static final Gson gson = new Gson();
     private static final OkHttpClient httpClient = new OkHttpClient.Builder()
-            .cookieJar(MainActivity.cookies) // Usa el almacenamiento global de cookies
+            .cookieJar(Main.cookies) // Usa el almacenamiento global de cookies
             .build();
 
     private static class LoginPayload {
@@ -36,7 +36,10 @@ public class LoginApi {
         String token;
     }
 
-    public static void login(String username, String password) {
+    public static void login(String username, String password, LoginCallback callback) {
+        System.out.println("Iniciando proceso de login...");
+        System.out.println("Usuario: " + username);
+
         LoginPayload payload = new LoginPayload(username, password);
         String jsonPayload = gson.toJson(payload);
 
@@ -51,7 +54,7 @@ public class LoginApi {
             @Override
             public void onFailure(Call call, IOException e) {
                 e.printStackTrace();
-                System.out.println("Error al conectar con el servidor: " + e.getMessage());
+                callback.onFailure("Error al conectar con el servidor: " + e.getMessage());
             }
 
             @Override
@@ -60,15 +63,21 @@ public class LoginApi {
                     String responseBody = response.body().string();
                     LoginResponse loginResponse = gson.fromJson(responseBody, LoginResponse.class);
 
-                    // Crear y guardar cookie manualmente
+                    // Guardar el token como cookie
                     Cookie authCookie = AuthUtils.createAuthCookie(loginResponse.token);
-                    MainActivity.cookies.saveFromResponse(null, List.of(authCookie));
+                    Main.cookies.saveFromResponse(null, List.of(authCookie));
 
-                    System.out.println("Token de autenticación guardado en cookie.");
+                    callback.onSuccess();
                 } else {
-                    System.out.println("Error de login. Código de respuesta: " + response.code());
+                    callback.onFailure("Error de login. Código de respuesta: " + response.code());
                 }
             }
         });
     }
+
+    public interface LoginCallback {
+        void onSuccess();
+        void onFailure(String errorMessage);
+    }
+
 }

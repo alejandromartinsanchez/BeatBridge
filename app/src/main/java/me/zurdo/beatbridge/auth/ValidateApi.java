@@ -4,15 +4,16 @@ import com.google.gson.Gson;
 
 import java.io.IOException;
 
-import me.zurdo.beatbridge.MainActivity;
+import me.zurdo.beatbridge.LoginActivity;
+import me.zurdo.beatbridge.Main;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
 public class ValidateApi {
-    private static final String VALIDATE_API_URL = "http://localhost:7070/api/validate";
+    private static final String VALIDATE_API_URL = "http://10.0.2.2:7070/api/validate";
     private static final OkHttpClient httpClient = new OkHttpClient.Builder()
-            .cookieJar(MainActivity.cookies)
+            .cookieJar(Main.cookies)
             .build();
     private static final Gson gson = new Gson();
 
@@ -36,9 +37,9 @@ public class ValidateApi {
         try (Response response = httpClient.newCall(request).execute()) {
             if (response.isSuccessful()) {
                 String responseBody = response.body().string();
-                ValidateResponse validateResponse = gson.fromJson(responseBody, ValidateResponse.class);
-                System.out.println("Token válido. Usuario autenticado: " + validateResponse.user);
-                return validateResponse.user;
+                User user = gson.fromJson(responseBody, User.class);
+                System.out.println("Token válido. Usuario autenticado: " + user);
+                return user;
             } else {
                 System.out.println("El token no es válido. Código de respuesta: " + response.code());
             }
