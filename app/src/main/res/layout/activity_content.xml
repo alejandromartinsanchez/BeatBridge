@@ -2,13 +2,11 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFF3E0"
     android:padding="16dp">
 
-    <!-- Flecha de retroceso en la esquina superior izquierda -->
     <ImageView
         android:id="@+id/back"
         android:layout_width="40dp"
@@ -23,7 +21,6 @@
         android:layout_marginTop="16dp" />
 
 
-    <!-- Texto principal -->
     <TextView
         android:id="@+id/textViewTitle"
         android:layout_width="wrap_content"
@@ -36,7 +33,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/back" />
 
-    <!-- Imagen de Add Content -->
     <ImageView
         android:id="@+id/imageViewAdd"
         android:layout_width="120dp"
@@ -52,7 +48,6 @@
         android:layout_marginTop="48dp"
         android:layout_marginEnd="16dp" />
 
-    <!-- Texto de Add Content -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -64,7 +59,6 @@
         app:layout_constraintEnd_toEndOf="@+id/imageViewAdd"
         android:layout_marginTop="8dp" />
 
-    <!-- Imagen de Delete Content -->
     <ImageView
         android:id="@+id/imageViewDelete"
         android:layout_width="120dp"
@@ -81,7 +75,6 @@
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp" />
 
-    <!-- Texto de Delete Content -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -93,7 +86,6 @@
         app:layout_constraintEnd_toEndOf="@+id/imageViewDelete"
         android:layout_marginTop="8dp" />
 
-    <!-- Imagen de Update Content -->
     <ImageView
         android:id="@+id/imageViewUpdate"
         android:layout_width="120dp"
@@ -108,7 +100,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="48dp" />
 
-    <!-- Texto de Update Content -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

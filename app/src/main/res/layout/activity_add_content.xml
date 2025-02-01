@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     android:background="#FFF3E0">
 
-    <!-- Flecha de retroceso en la esquina superior izquierda -->
     <ImageView
         android:id="@+id/back"
         android:layout_width="40dp"
@@ -20,7 +19,6 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp" />
 
-    <!-- Contenido principal en un ScrollView -->
     <ScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -36,7 +34,6 @@
             android:gravity="center"
             android:padding="24dp">
 
-            <!-- Título -->
             <TextView
                 android:id="@+id/textViewTitle"
                 android:layout_width="wrap_content"
@@ -46,9 +43,7 @@
                 android:textColor="#000"
                 android:layout_marginBottom="24dp" />
 
-            <!-- Campos del formulario -->
 
-            <!-- Campo: Nombre -->
             <EditText
                 android:id="@+id/editTextName"
                 android:layout_width="match_parent"
@@ -57,7 +52,6 @@
                 android:padding="12dp"
                 android:backgroundTint="#FFAB91" />
 
-            <!-- Campo: Link -->
             <EditText
                 android:id="@+id/editTextLink"
                 android:layout_width="match_parent"
@@ -67,7 +61,6 @@
                 android:backgroundTint="#FFAB91"
                 android:inputType="textUri" />
 
-            <!-- Campo: Letra -->
             <EditText
                 android:id="@+id/editTextLyrics"
                 android:layout_width="match_parent"
@@ -80,7 +73,6 @@
                 android:scrollHorizontally="false"
                 android:gravity="top" />
 
-            <!-- CheckBox: Pertenece a un álbum -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -104,7 +96,6 @@
                     android:textColor="#000" />
             </LinearLayout>
 
-            <!-- Campos del álbum (Ocultos inicialmente) -->
             <LinearLayout
                 android:id="@+id/albumFieldsContainer"
                 android:layout_width="match_parent"
@@ -113,7 +104,6 @@
                 android:visibility="gone"
                 android:layout_marginTop="16dp">
 
-                <!-- Campo: Nombre del álbum -->
                 <EditText
                     android:id="@+id/editTextAlbumName"
                     android:layout_width="match_parent"
@@ -122,7 +112,6 @@
                     android:padding="12dp"
                     android:backgroundTint="#FFAB91" />
 
-                <!-- Campo: Año del álbum -->
                 <EditText
                     android:id="@+id/editTextAlbumYear"
                     android:layout_width="match_parent"
@@ -133,7 +122,6 @@
                     android:inputType="number" />
             </LinearLayout>
 
-            <!-- Botón de agregar -->
             <Button
                 android:id="@+id/buttonAddContent"
                 android:layout_width="match_parent"

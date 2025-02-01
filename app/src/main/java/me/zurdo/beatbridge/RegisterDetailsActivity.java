@@ -7,50 +7,46 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import androidx.appcompat.app.AppCompatActivity;
-
 import me.zurdo.beatbridge.auth.RegisterApi;
 
 public class RegisterDetailsActivity extends AppCompatActivity {
     private EditText editTextEmail, editTextPassword, editTextName;
     private Button buttonRegister;
     private ImageView backArrow;
-    private String userType;  // Variable para almacenar el tipo de usuario ("Artist" u "Oyente")
+    private String userType;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_details);
 
-        // Referencias a elementos de la interfaz
         editTextEmail = findViewById(R.id.editTextEmail);
         editTextPassword = findViewById(R.id.editTextPassword);
         editTextName = findViewById(R.id.editTextArtistName);
         buttonRegister = findViewById(R.id.buttonRegister);
         backArrow = findViewById(R.id.back);
 
-        // Configura la funcionalidad de la flecha de retroceso
+        // Configurar el boton volver
         backArrow.setOnClickListener(v -> navigateBackToRegisterType());
 
-        // Obtiene el valor del tipo de usuario ("Artist" u "Oyente") pasado desde otra actividad
+        // Obtener el tipo de usuario
         userType = getIntent().getStringExtra("USER_TYPE");
 
         if ("Artist".equals(userType)) {
-            // Muestra solo el campo del nombre del artista y configura el hint correspondiente
             editTextName.setVisibility(View.VISIBLE);
             editTextName.setHint("Nombre del Artista");
         } else {
-            // Para el caso del oyente, configura el hint como "Nombre de Usuario"
             editTextName.setVisibility(View.VISIBLE);
             editTextName.setHint("Nombre de Usuario");
         }
 
-        // Configura el evento del botón de registro
+        // Configurar el boton registro
         buttonRegister.setOnClickListener(v -> completeRegistration());
     }
 
-    // Método para navegar de regreso a la actividad RegisterTypeActivity
     private void navigateBackToRegisterType() {
-        Intent intent = new Intent(RegisterDetailsActivity.this, RegisterTypeActivity.class);
+        Intent intent = new Intent(this, RegisterTypeActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
         finish();
     }
@@ -61,11 +57,5 @@ public class RegisterDetailsActivity extends AppCompatActivity {
         String password = editTextPassword.getText().toString().trim();
         String email = editTextEmail.getText().toString().trim();
         RegisterApi.register(username, password, email, userType.toUpperCase());
-        if ("Artist".equals(userType)) {
-            String artistName = editTextName.getText().toString().trim();
-            System.out.println("Registrado como Artista: " + artistName + ", Email: " + email);
-        } else {
-            System.out.println("Registrado como Oyente: " + username + ", Email: " + email);
-        }
     }
 }

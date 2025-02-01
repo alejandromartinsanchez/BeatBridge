@@ -1,11 +1,9 @@
 package me.zurdo.beatbridge.auth;
 
 import com.google.gson.Gson;
-
 import java.io.IOException;
 import java.util.List;
-
-import me.zurdo.beatbridge.Main;
+import me.zurdo.beatbridge.LoginActivity;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.Cookie;
@@ -16,10 +14,10 @@ import okhttp3.RequestBody;
 import okhttp3.Response;
 
 public class LoginApi {
-    private static final String LOGIN_API_URL = "http://10.0.2.2:7070/api/login";
+    private static final String LOGIN_API_URL = "http://10.0.2.2:7070/api/auth/login";
     private static final Gson gson = new Gson();
     private static final OkHttpClient httpClient = new OkHttpClient.Builder()
-            .cookieJar(Main.cookies) // Usa el almacenamiento global de cookies
+            .cookieJar(LoginActivity.cookies) // Usar el almacenamiento global de cookies
             .build();
 
     private static class LoginPayload {
@@ -36,6 +34,7 @@ public class LoginApi {
         String token;
     }
 
+    // Iniciar sesión
     public static void login(String username, String password, LoginCallback callback) {
         System.out.println("Iniciando proceso de login...");
         System.out.println("Usuario: " + username);
@@ -65,7 +64,7 @@ public class LoginApi {
 
                     // Guardar el token como cookie
                     Cookie authCookie = AuthUtils.createAuthCookie(loginResponse.token);
-                    Main.cookies.saveFromResponse(null, List.of(authCookie));
+                    LoginActivity.cookies.saveFromResponse(null, List.of(authCookie));
 
                     callback.onSuccess();
                 } else {

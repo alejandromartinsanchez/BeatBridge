@@ -1,9 +1,7 @@
 package me.zurdo.beatbridge.auth;
 
 import com.google.gson.Gson;
-
 import java.io.IOException;
-
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.MediaType;
@@ -13,7 +11,7 @@ import okhttp3.RequestBody;
 import okhttp3.Response;
 
 public class RegisterApi {
-    private static final String REGISTER_API_URL = "http://10.0.2.2:7070/api/register";
+    private static final String REGISTER_API_URL = "http://10.0.2.2:7070/api/auth/register";
     private static final Gson gson = new Gson();
     private static final OkHttpClient httpClient = new OkHttpClient();
 
@@ -35,7 +33,7 @@ public class RegisterApi {
         String response;
     }
 
-    // Método para realizar el registro con OkHttp
+    // Registrarse
     public static void register(String username, String password, String email, String role) {
         RegisterPayload payload = new RegisterPayload(username, password, email, role);
         String jsonPayload = gson.toJson(payload);

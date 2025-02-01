@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
@@ -11,17 +12,21 @@
         android:id="@+id/tvSongName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_weight="3"
+        android:layout_weight="11"
         android:padding="4dp"
         android:text="Nombre de la Canción"
         android:textColor="#000"
         android:textSize="16sp"
         android:gravity="start" />
 
-    <CheckBox
-        android:id="@+id/songCheckBox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <ImageView
+        android:id="@+id/ivUpdate"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:layout_weight="1"
-        android:buttonTint="#FF7043" />
+        android:src="@drawable/logoupdate"
+        android:contentDescription="Actualizar"
+        android:clickable="true"
+        android:focusable="true"
+        android:layout_marginEnd="16dp" />
 </LinearLayout>

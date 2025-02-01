@@ -7,7 +7,6 @@
     android:background="#FFF3E0"
     android:padding="16dp">
 
-    <!-- Flecha de retroceso en la esquina superior izquierda -->
     <ImageView
         android:id="@+id/back"
         android:layout_width="40dp"
@@ -21,7 +20,6 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp" />
 
-    <!-- Texto principal centrado debajo de la flecha -->
     <TextView
         android:id="@+id/textViewTitle"
         android:layout_width="wrap_content"
@@ -34,7 +32,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/back" />
 
-    <!-- Contenedor horizontal para imágenes y textos -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -45,7 +42,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="48dp">
 
-        <!-- Contenedor para Oyente -->
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -72,7 +68,6 @@
                 android:layout_marginTop="8dp" />
         </LinearLayout>
 
-        <!-- Contenedor para Artista -->
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

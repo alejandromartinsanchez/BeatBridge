@@ -1,19 +1,16 @@
 package me.zurdo.beatbridge.auth;
 
 import com.google.gson.Gson;
-
 import java.io.IOException;
-
 import me.zurdo.beatbridge.LoginActivity;
-import me.zurdo.beatbridge.Main;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
 public class ValidateApi {
-    private static final String VALIDATE_API_URL = "http://10.0.2.2:7070/api/validate";
+    private static final String VALIDATE_API_URL = "http://10.0.2.2:7070/api/auth/validate";
     private static final OkHttpClient httpClient = new OkHttpClient.Builder()
-            .cookieJar(Main.cookies)
+            .cookieJar(LoginActivity.cookies)
             .build();
     private static final Gson gson = new Gson();
 
@@ -21,6 +18,7 @@ public class ValidateApi {
         User user;
     }
 
+    // Validar el token
     public static User validateToken() {
         String authToken = AuthUtils.getAuthCookie();
         if (authToken == null) {

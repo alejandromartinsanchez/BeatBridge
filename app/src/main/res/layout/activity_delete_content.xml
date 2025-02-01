@@ -7,7 +7,6 @@
     android:background="#FFF3E0"
     android:padding="16dp">
 
-    <!-- Flecha de retroceso en la esquina superior izquierda -->
     <ImageView
         android:id="@+id/back"
         android:layout_width="40dp"
@@ -21,7 +20,6 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp" />
 
-    <!-- Título de la pantalla -->
     <TextView
         android:id="@+id/textViewTitle"
         android:layout_width="wrap_content"
@@ -34,7 +32,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Tabla de canciones -->
     <ScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -50,8 +47,8 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <!-- Encabezado de la tabla -->
             <LinearLayout
+                android:id="@+id/headerRow"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -59,7 +56,6 @@
                 android:background="#FFAB91"
                 android:gravity="center_vertical">
 
-                <!-- Columna Nombre -->
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -70,7 +66,6 @@
                     android:textStyle="bold"
                     android:gravity="start" />
 
-                <!-- Columna Eliminar -->
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -85,14 +80,11 @@
 
             </LinearLayout>
 
-            <!-- Las filas de canciones se agregarán dinámicamente aquí -->
-
         </LinearLayout>
     </ScrollView>
 
-    <!-- Botón para eliminar las canciones seleccionadas -->
     <Button
-        android:id="@+id/buttonDeleteSelected"
+        android:id="@+id/buttonDelete"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Eliminar"

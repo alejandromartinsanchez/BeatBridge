@@ -25,9 +25,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Lista de Canciones"
+        android:text="Lista de Álbumes"
         android:textSize="24sp"
         android:textColor="#000"
+        android:textStyle="bold"
         app:layout_constraintTop_toBottomOf="@id/back"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -42,7 +43,7 @@
         android:layout_marginTop="16dp">
 
         <LinearLayout
-            android:id="@+id/linearLayout"
+            android:id="@+id/linearLayoutAlbums"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
@@ -68,26 +69,15 @@
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    android:layout_weight="2"
                     android:paddingStart="8dp"
-                    android:text="Info"
+                    android:text="Desplegar"
                     android:textColor="#000"
                     android:textStyle="bold"
-                    android:gravity="start" />
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:paddingStart="8dp"
-                    android:text="Play"
-                    android:textColor="#000"
-                    android:textStyle="bold"
-                    android:gravity="start" />
+                    android:gravity="center" />
 
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-

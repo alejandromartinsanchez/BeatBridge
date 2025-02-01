@@ -2,13 +2,11 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFF3E0"
     android:padding="16dp">
 
-    <!-- Imagen de perfil en la esquina superior derecha -->
     <ImageView
         android:id="@+id/imageViewProfile"
         android:layout_width="40dp"
@@ -22,7 +20,6 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp" />
 
-    <!-- Texto principal -->
     <TextView
         android:id="@+id/textViewTitle"
         android:layout_width="wrap_content"
@@ -35,7 +32,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageViewProfile" />
 
-    <!-- Imagen de Canciones -->
     <ImageView
         android:id="@+id/imageViewSongs"
         android:layout_width="120dp"
@@ -51,7 +47,6 @@
         android:layout_marginTop="48dp"
         android:layout_marginEnd="16dp" />
 
-    <!-- Texto de Canciones -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -63,7 +58,6 @@
         app:layout_constraintEnd_toEndOf="@+id/imageViewSongs"
         android:layout_marginTop="8dp" />
 
-    <!-- Imagen de Albumes -->
     <ImageView
         android:id="@+id/imageViewAlbums"
         android:layout_width="120dp"
@@ -79,7 +73,6 @@
         android:layout_marginTop="48dp"
         android:layout_marginStart="16dp" />
 
-    <!-- Texto de Albumes -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -91,7 +84,6 @@
         app:layout_constraintEnd_toEndOf="@+id/imageViewAlbums"
         android:layout_marginTop="8dp" />
 
-    <!-- Imagen de Estadísticas -->
 
     <ImageView
         android:id="@+id/imageViewStats"
@@ -106,7 +98,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageViewSongs" />
 
-    <!-- Texto de Estadísticas -->
 
     <TextView
         android:layout_width="wrap_content"
@@ -119,7 +110,6 @@
         app:layout_constraintEnd_toEndOf="@+id/imageViewStats"
         android:layout_marginTop="8dp" />
 
-    <!-- Imagen de Añadir Contenido -->
 
     <ImageView
         android:id="@+id/imageContent"
@@ -134,7 +124,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageViewSongs" />
 
-    <!-- Texto de Añadir Contenido -->
     <TextView
         android:id="@+id/textViewAñadirContenido"
         android:layout_width="wrap_content"

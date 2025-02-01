@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     android:background="#FFF3E0">
 
-    <!-- Flecha de retroceso en la esquina superior izquierda -->
     <ImageView
         android:id="@+id/back"
         android:layout_width="40dp"
@@ -20,7 +19,6 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp" />
 
-    <!-- Contenido principal en un ScrollView -->
     <ScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -36,7 +34,6 @@
             android:gravity="center"
             android:padding="24dp">
 
-            <!-- Título -->
 
             <TextView
                 android:id="@+id/textViewTitle"
@@ -47,7 +44,6 @@
                 android:textColor="#000"
                 android:layout_marginBottom="24dp" />
 
-            <!-- Campos del registro -->
 
             <EditText
                 android:id="@+id/editTextArtistName"
@@ -75,7 +71,6 @@
                 android:padding="12dp"
                 android:backgroundTint="#FFAB91" />
 
-            <!-- Botón de registro -->
             <Button
                 android:id="@+id/buttonRegister"
                 android:layout_width="match_parent"
